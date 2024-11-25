@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Generador Básico de Dominios</title>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
-    </div>
+    <h1>Generador de Dominios</h1>
+    <ul id="domain-list"></ul>
+
+    <script>
+      let pronoun = ["the", "our", "his"];
+      let adj = ["great", "big", "amazing"];
+      let noun = ["jogger", "racoon", "dog", "merchant", "driver"];
+
+      const domainList = document.querySelector("#domain-list");
+
+      for (let i = 0; i < pronoun.length; i++) {
+        for (let j = 0; j < adj.length; j++) {
+          for (let k = 0; k < noun.length; k++) {
+            let listItem = document.createElement("li");
+            listItem.textContent = pronoun[i] + adj[j] + noun[k] + ".com";
+            domainList.appendChild(listItem);
+          }
+        }
+      }
+    </script>
   </body>
 </html>
